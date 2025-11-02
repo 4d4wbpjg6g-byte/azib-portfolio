@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Get in Touch — AZIB BIN SABDIN STUDENT</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    :root{
+      --accent:#0b73ff;
+      --muted:#6b7280;
+      --card:#fff;
+      --bg:#f7f9fb;
+      --radius:12px;
+      --label-width:220px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial;margin:0;background:var(--bg);color:#111;line-height:1.6}
+    .wrap{max-width:980px;margin:28px auto;padding:18px}
+    header{display:flex;align-items:center;justify-content:space-between}
+    .logo{
+      width:52px;height:52px;border-radius:10px;background:var(--accent);
+      display:flex;align-items:center;justify-content:center;overflow:hidden;
+    }
+    .logo img{width:100%;height:100%;object-fit:cover}
+    nav a{margin-left:10px;text-decoration:none;color:var(--muted);padding:8px;border-radius:8px;transition:0.3s}
+    nav a:hover,nav a.active{color:var(--accent);background:rgba(11,115,255,0.06)}
+    .card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:0 8px 20px rgba(2,6,23,0.06);margin-top:20px}
+    h1{color:var(--accent);margin-top:0}
+
+    /* form grid layout */
+    form{display:block;margin-top:6px}
+    .form-grid{display:grid;grid-template-columns:var(--label-width) 1fr;gap:10px 18px;align-items:center}
+    .form-row{display:contents}
+    .form-label{justify-self:end;padding-right:8px;font-weight:600;color:#333}
+    .form-control{justify-self:stretch}
+
+    input[type="text"], input[type="email"], select, textarea{
+      width:100%;padding:10px;border:1px solid #d1d5db;border-radius:8px;font-size:15px;transition:border 0.3s,box-shadow 0.3s;
+    }
+    input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(11,115,255,0.1)}
+    input.invalid, select.invalid, textarea.invalid{border-color:#e11d48;box-shadow:0 0 0 3px rgba(225,29,72,0.15)}
+
+    .checkbox-group, .radio-group{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+    .checkbox-group label, .radio-group label{display:inline-flex;align-items:center;gap:8px;cursor:pointer;padding:4px 6px;border-radius:6px}
+    .checkbox-group input, .radio-group input{width:auto}
+    .job-wrap{display:flex;align-items:center;gap:10px}
+
+    .buttons{display:flex;gap:10px;align-items:center}
+    button{
+      background:var(--accent);color:#fff;border:none;border-radius:8px;padding:10px 16px;font-size:15px;cursor:pointer;
+      transition:transform 0.12s ease,background 0.12s ease;
+    }
+    button[type="reset"]{background:#e5e7eb;color:#111}
+    button:hover{transform:translateY(-2px)}
+    button[type="reset"]:hover{background:#d1d5db}
+    #result{grid-column:1/-1;margin-top:18px;background:#e8f3ff;padding:16px;border-radius:10px;display:none}
+    footer{margin-top:14px;color:var(--muted);text-align:center}
+
+    @media (max-width:720px){
+      .form-grid{grid-template-columns:1fr}
+      .form-label{justify-self:start;padding-right:0}
+      :root{--label-width:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="home.html" style="display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit">
+        <div class="logo"><img src="images/logo.png" alt="AZ Logo"></div>
+        <div>
+          <div style="font-weight:700">AZIB BIN SABDIN STUDENT</div>
+          <div style="font-size:13px;color:var(--muted)">Aspiring Front-End Developer</div>
+        </div>
+      </a>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="resume.html">Resume</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html" class="active">Get in Touch</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <h1>Get in Touch — Contact Form</h1>
+
+      <form id="contactForm" onsubmit="return false;">
+        <div class="form-grid">
+          <div class="form-label"><label for="name">Full Name</label></div>
+          <div class="form-control"><input type="text" id="name" placeholder="Enter your full name"></div>
+
+          <div class="form-label"><label for="email">Email Address</label></div>
+          <div class="form-control"><input type="email" id="email" placeholder="example@gmail.com"></div>
+
+          <div class="form-label"><label for="phone">Phone Number</label></div>
+          <div class="form-control"><input type="text" id="phone" placeholder="Enter your phone number" onkeypress="return onlyNumbers(event)" maxlength="11"></div>
+
+          <div class="form-label"><label for="company">Organisation / Company</label></div>
+          <div class="form-control"><input type="text" id="company" placeholder="Enter company name"></div>
+
+          <div class="form-label"><label for="industry">Industry Field</label></div>
+          <div class="form-control">
+            <select id="industry">
+              <option value="">Select Industry</option>
+              <option>Creative & Design</option>
+              <option>Information Technology</option>
+              <option>Education</option>
+              <option>Cybersecurity</option>
+            </select>
+          </div>
+
+          <div class="form-label">Job Opportunity</div>
+          <div class="form-control job-wrap">
+            <label><input type="checkbox" id="job" value="Job Opportunity"> I am interested in job opportunities</label>
+          </div>
+
+          <div class="form-label">Areas of Interest</div>
+          <div class="form-control checkbox-group">
+            <label><input type="checkbox" id="collab" value="Project Collaboration"> Project Collaboration</label>
+            <label><input type="checkbox" id="network" value="Networking / Mentorship"> Networking / Mentorship</label>
+          </div>
+
+          <div class="form-label">Preferred Contact Method</div>
+          <div class="form-control radio-group">
+            <label><input type="radio" name="contact" value="Email"> Email</label>
+            <label><input type="radio" name="contact" value="Phone"> Phone</label>
+          </div>
+
+          <div class="form-label"><label for="comments">Additional Comments</label></div>
+          <div class="form-control"><textarea id="comments" rows="4" placeholder="Write your message here"></textarea></div>
+
+          <div class="form-label"></div>
+          <div class="form-control buttons">
+            <button type="button" onclick="submitForm()">Submit</button>
+            <button type="reset">Cancel</button>
+          </div>
+
+          <div id="result"></div>
+        </div>
+      </form>
+    </main>
+
+    <footer>© AZIB BIN SABDIN STUDENT</footer>
+  </div>
+
+  <script>
+    // Allow only numbers in phone input
+    function onlyNumbers(evt){
+      const code = evt.which ? evt.which : evt.keyCode;
+      if(code > 31 && (code < 48 || code > 57)){
+        evt.preventDefault();
+        return false;
+      }
+      return true;
+    }
+
+    function submitForm(){
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const phone = document.getElementById('phone');
+      const company = document.getElementById('company');
+      const industry = document.getElementById('industry');
+      const job = document.getElementById('job').checked ? "Job Opportunity" : "-";
+      const collab = document.getElementById('collab').checked ? "Project Collaboration" : "";
+      const network = document.getElementById('network').checked ? "Networking / Mentorship" : "";
+      const contactMethod = document.querySelector('input[name="contact"]:checked');
+      const comments = document.getElementById('comments');
+
+      // remove old highlights
+      [name,email,phone,company,industry,comments].forEach(el=>el.classList.remove('invalid'));
+
+      // validation
+      let valid = true;
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+      if(!name.value.trim()){name.classList.add('invalid');valid=false;}
+      if(!email.value.trim() || !emailPattern.test(email.value)){email.classList.add('invalid');valid=false;}
+      if(!phone.value.trim()){phone.classList.add('invalid');valid=false;}
+      if(!company.value.trim()){company.classList.add('invalid');valid=false;}
+      if(!industry.value){industry.classList.add('invalid');valid=false;}
+      if(!contactMethod){alert("Please choose a preferred contact method.");valid=false;}
+      if(!valid){
+        alert("Please fill in all required fields correctly.");
+        return;
+      }
+
+      const interests = [collab, network].filter(Boolean).join(", ") || "-";
+      const output = `
+        <h2 style="margin-top:0;color:var(--accent)">Message Sent Successfully!</h2>
+        <p><strong>Name</strong> : ${escapeHtml(name.value)}</p>
+        <p><strong>Email</strong> : ${escapeHtml(email.value)}</p>
+        <p><strong>Phone Number</strong> : ${escapeHtml(phone.value)}</p>
+        <p><strong>Organisation</strong> : ${escapeHtml(company.value)}</p>
+        <p><strong>Industry Field</strong> : ${escapeHtml(industry.value)}</p>
+        <p><strong>Job Opportunity</strong> : ${escapeHtml(job)}</p>
+        <p><strong>Interest Area</strong> : ${escapeHtml(interests)}</p>
+        <p><strong>Preferred Contact Method</strong> : ${escapeHtml(contactMethod.value)}</p>
+        <p><strong>Comments</strong> : ${escapeHtml(comments.value || "-")}</p>
+      `;
+      const result = document.getElementById('result');
+      result.innerHTML = output;
+      result.style.display = 'block';
+      document.getElementById('contactForm').reset();
+      result.scrollIntoView({behavior:'smooth'});
+    }
+
+    // prevent HTML injection in displayed data
+    function escapeHtml(str){
+      return str.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+    }
+  </script>
+</body>
+</html>

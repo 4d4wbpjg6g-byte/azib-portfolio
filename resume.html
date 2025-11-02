@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Resume — AZIB BIN SABDIN STUDENT</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Resume of AZIB BIN SABDIN STUDENT — Education, Experience, and Achievements.">
+  <style>
+    :root {
+      --accent:#0b73ff;
+      --muted:#6b7280;
+      --card:#fff;
+      --bg:#f7f9fb;
+      --radius:12px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,Arial;
+      background:var(--bg);
+      color:#111;
+      line-height:1.6;
+    }
+
+    .wrap{max-width:980px;margin:28px auto;padding:18px}
+    header{display:flex;align-items:center;justify-content:space-between}
+
+    /* Logo and brand */
+    .logo-link {display:inline-block;transition:transform 0.3s ease;}
+    .logo-link:hover {transform:scale(1.08);}
+    .logo{
+      width:52px;height:52px;border-radius:10px;overflow:hidden;
+      background:var(--accent);
+      display:flex;align-items:center;justify-content:center;
+      transition:background 0.3s ease, box-shadow 0.3s ease;
+    }
+    .logo:hover{background:#0056d4;box-shadow:0 0 12px rgba(11,115,255,0.5);}
+    .logo img{width:100%;height:100%;object-fit:cover;}
+
+    /* Navigation */
+    nav a{
+      margin-left:10px;text-decoration:none;color:var(--muted);
+      padding:8px;border-radius:8px;transition:0.3s;
+    }
+    nav a:hover,nav a.active{color:var(--accent);background:rgba(11,115,255,0.06);}
+
+    /* Card layout */
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:0 8px 20px rgba(2,6,23,0.06);
+      margin-top:20px;
+      animation:fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+    h1,h2{color:var(--accent);margin-bottom:10px;}
+    ul{margin-left:20px;margin-top:6px;}
+
+    .section{margin-bottom:24px;}
+
+    /* Download buttons */
+    .btn{
+      display:inline-block;
+      margin-top:12px;
+      padding:10px 18px;
+      background:var(--accent);
+      color:#fff;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:500;
+      transition:background 0.3s,transform 0.3s;
+    }
+    .btn:hover{background:#0056d4;transform:translateY(-2px);}
+    .btn-secondary{
+      background:#6b7280;
+      margin-left:8px;
+    }
+    .btn-secondary:hover{
+      background:#4b5563;
+    }
+
+    footer{margin-top:14px;color:var(--muted);text-align:center;}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <!-- HEADER -->
+    <header>
+      <div style="display:flex;align-items:center;gap:12px">
+        <a href="home.html" class="logo-link">
+          <div class="logo">
+            <img src="images/logo.png" alt="AZ Logo">
+          </div>
+        </a>
+        <div>
+          AZIB BIN SABDIN STUDENT
+          <div style="font-size:14px;color:var(--muted)">Aspiring Front-End Developer</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="resume.html" class="active">Resume</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="skills.html">Skills</a>
+        <a href="contact.html">Get in Touch</a>
+      </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="card">
+      <h1>Resume</h1>
+
+      <!-- Education Section -->
+      <div class="section">
+        <h2>🎓 Education</h2>
+        <p>SPM — Account Stream</p>
+        <p>STPM — Information Technology Studies</p>
+        <p>Bachelor in Information Technology (Hons), Open University Malaysia (OUM) — Ongoing</p>
+      </div>
+
+      <!-- Experience Section -->
+      <div class="section">
+        <h2>💼 Experience</h2>
+        <p>Student Developer — Academic Projects</p>
+        <ul>
+          <li>Developed multiple web-based projects using HTML, CSS, and JavaScript.</li>
+          <li>Collaborated with peers to design and implement responsive web interfaces.</li>
+          <li>Created dynamic pages that highlight both usability and design consistency.</li>
+        </ul>
+      </div>
+
+      <!-- Achievements Section -->
+      <div class="section">
+        <h2>🏆 Achievements</h2>
+        <ul>
+          <li>Completed several mini-projects on front-end design and interactivity.</li>
+          <li>Actively contributed to team-based IT projects that enhanced communication and leadership skills.</li>
+          <li>Earned academic recognition for consistent performance and project presentation quality.</li>
+        </ul>
+      </div>
+
+      <!-- Skills Summary -->
+      <div class="section">
+        <h2>🧠 Technical Skills</h2>
+        <ul>
+          <li>HTML, CSS, JavaScript</li>
+          <li>UI/UX Design Basics</li>
+          <li>Cybersecurity Fundamentals</li>
+          <li>Responsive Web Design</li>
+        </ul>
+      </div>
+
+      <!-- Download / View Buttons -->
+      <div class="section">
+        <a href="AZIB_Resume.pdf" class="btn" download>⬇️ Download My Resume (PDF)</a>
+        <a href="AZIB_Resume.pdf" target="_blank" class="btn btn-secondary">👁️ View Resume Online</a>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>© AZIB BIN SABDIN STUDENT</footer>
+  </div>
+</body>
+</html>
