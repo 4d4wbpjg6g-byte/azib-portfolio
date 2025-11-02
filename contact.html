@@ -66,15 +66,15 @@
 <body>
   <div class="wrap">
     <header>
-      <a class="brand" href="home.html" style="display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit">
-        <div class="logo"><img src="images/logo.png" alt="AZ Logo"></div>
+      <a class="brand" href="index.html" style="display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit">
+        <div class="logo"><img src="logo.png" alt="AZ Logo"></div>
         <div>
           <div style="font-weight:700">AZIB BIN SABDIN STUDENT</div>
           <div style="font-size:13px;color:var(--muted)">Aspiring Front-End Developer</div>
         </div>
       </a>
       <nav>
-        <a href="home.html">Home</a>
+        <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
         <a href="resume.html">Resume</a>
         <a href="portfolio.html">Portfolio</a>
@@ -168,7 +168,7 @@
       const contactMethod = document.querySelector('input[name="contact"]:checked');
       const comments = document.getElementById('comments');
 
-      // remove old highlights
+      
       [name,email,phone,company,industry,comments].forEach(el=>el.classList.remove('invalid'));
 
       // validation
@@ -212,3 +212,4 @@
   </script>
 </body>
 </html>
+
